@@ -11,7 +11,6 @@ from operator import itemgetter
 import json
 import os
 
-# query = "(from:VirginMaster77) until:2023-01-01 since:2022-01-01"
 app = Flask(__name__)
 env = Environment(loader=PackageLoader(__name__, 'templates'))
 env.filters['json'] = json.dumps
@@ -26,6 +25,10 @@ file_uploads = "C:/Users/irecg/PythonProjects/EmotionDetectApp/static/files"
 @app.route('/home',methods=["POST","GET"])
 def home():
     return render_template('home.html')
+
+@app.route('/features',methods=["POST","GET"])
+def features():
+    return render_template('features.html')
 
 @app.route('/text-scanner',methods=["POST","GET"])
 def text_scanner():
@@ -56,7 +59,7 @@ def twitter_scanner():
 def youtube_scanner():
     if request.method == "POST":
         video_link = request.form["link"]
-        max_results = request.form["max_results"] #Next page token for max results
+        max_results = request.form["max_results"]
         video_link = video_link[-11:]
         positive_result,neutral_result,negative_result,total_emotions = analyse_youtube(video_link,int(max_results))
     else:

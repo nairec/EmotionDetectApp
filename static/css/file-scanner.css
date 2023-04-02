@@ -15,7 +15,7 @@
     border-width: 3px;
     border-radius: 10px;
     border-style: solid;
-    background-color: #171831;
+    background-color: #0d1422;
     cursor: pointer;
     transition: 0.3s;
     color: whitesmoke;
@@ -24,7 +24,6 @@
     color: whitesmoke;
 }
 .file-input::file-selector-button:hover {
-    box-shadow: 4px 4px 10px 2px #153a3a;
     background: none repeat scroll 0 0 #6b6daf;
     transition: 0.3s;
     border-color:#91FA9F;
@@ -36,7 +35,7 @@
     height: 40px;
     padding-left: 5px;
     outline: none;
-    background-color: #171831;
+    background-color: #0d1422;
     color: whitesmoke;
     border: 2px #555594 solid;
     transition: 0.3s;
