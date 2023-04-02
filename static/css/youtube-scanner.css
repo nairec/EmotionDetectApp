@@ -1,0 +1,85 @@
+.input-div{
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+#number-input{
+    margin-top: 20px;
+    width: 300px;
+}
+
+#result-labels{
+    display: table-row;
+    margin-left:5%;
+    width: 100%;
+}
+.input{
+    padding: 5px;
+    width: 400px;
+    border-color: #555594;
+    border-width: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: #0d1422;
+    color: whitesmoke;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input:hover {
+    background: none repeat scroll 0 0 #6b6daf;
+    outline-width: 0;
+    transition: 0.3s;
+    border-color:#91FA9F;
+    color: #1C1C3B;
+    box-shadow: 8px 8px 10px 2px #153a3a;
+}
+
+.input:hover::placeholder {
+    color: #1C1C3B;
+}
+
+.sentiment-label-text{
+    line-height: 30px;
+    margin-left: 530px;
+    background-color: none;
+    text-align: center;
+    color:whitesmoke;
+    font-size: 20px;
+}
+.sentiment-label-text:first-child{
+    margin-left: 100px;
+}
+.result-labels-text-div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+.sentiment-label-div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.emotion-table{
+    margin-top: 20px;
+    margin-left: 5%;
+    width: fit-content;
+    list-style-type: none;
+    color: whitesmoke;
+    border: 2px #91FA9F solid;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 8px 8px 10px 2px #143636;
+}
+li{
+    line-height: 40px;
+}
+.progress-bar{
+    height: 5px;
+    border-radius: 20px;
+}
+b{
+    margin-left: 20px;
+}

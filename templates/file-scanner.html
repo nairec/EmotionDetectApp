@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block head %}
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="static/css/youtube-scanner.css">
+  <link rel="stylesheet" href="static/css/file-scanner.css">
+  <style>
+    #love_progress { width: {{600*emotion['love']/100}}px }
+    #admiration_progress { width: {{ 600*emotion['admiration']/100 }}px }
+    #joy_progress { width: {{ 600*emotion['joy']/100 }}px }
+    #approval_progress { width: {{600*emotion['approval']/100}}px}
+    #caring_progress { width: {{600*emotion['caring']/100}}px}
+    #excitement_progress { width: {{600*emotion['excitement']/100}}px}
+    #amusement_progress { width: {{600*emotion['amusement']/100}}px}
+    #gratitude_progress { width: {{600*emotion['gratitude']/100}}px}
+    #desire_progress { width: {{600*emotion['desire']/100}}px}
+    #anger_progress { width: {{600*emotion['anger']/100}}px}
+    #optimism_progress { width: {{600*emotion['optimism']/100}}px}
+    #disapproval_progress { width: {{600*emotion['disapproval']/100}}px}
+    #grief_progress { width: {{600*emotion['grief']/100}}px}
+    #annoyance_progress { width: {{600*emotion['annoyance']/100}}px}
+    #pride_progress { width: {{600*emotion['pride']/100}}px}
+    #curiosity_progress { width: {{600*emotion['curiosity']/100}}px}
+    #neutral_progress { width: {{600*emotion['neutral']/100}}px}
+    #disgust_progress { width: {{600*emotion['disgust']/100}}px}
+    #disappointment_progress { width: {{600*emotion['disappointment']/100}}px}
+    #realization_progress { width: {{600*emotion['realization']/100}}px}
+    #fear_progress { width: {{600*emotion['fear']/100}}px}
+    #relief_progress { width: {{600*emotion['relief']/100}}px}
+    #confusion_progress { width: {{600*emotion['confusion']/100}}px}
+    #remorse_progress { width: {{600*emotion['remorse']/100}}px}
+    #embarrassment_progress { width: {{600*emotion['embarrassment']/100}}px}
+    #surprise_progress { width: {{600*emotion['surprise']/100}}px}
+    #sadness_progress { width: {{600*emotion['sadness']/100}}px}
+    #nervousness_progress { width: {{600*emotion['nervousness']/100}}px}
+  </style>
+  <title>My Web</title>
+</meta>
+{% endblock %}
+{% block navbar %}
+<div class="navbar-nav">
+  <a class="nav-link" id='a-Home' aria-current="page" href="/home">Home</a>
+  <a class="nav-link" id='a-Features' href="#">Features</a>
+  <a class="nav-link" id='a-Text' href="/text-scanner">Text scanner</a>
+  <a class="nav-link" id='a-Twitter'class='a' href="/twitter-scanner">Twitter scanner</a>
+  <a class="nav-link" id='a-Youtube' href="/youtube-scanner">Youtube scanner</a>
+  <a class="nav-link active" id='a-File'class='a' href="/file-scanner">File scanner</a>
+</div>
+{% endblock %}
+{% block content %}
+<h1>File Scanner</h1>  
+<form action="#" method='post' enctype="multipart/form-data">
+    <div class="text-input">
+        <div class="input-row">
+            <input type="file" name="file" class="file-input" value=""></input>
+        </div>
+        <div class="input-row">
+            <select name="mode" class="file-mode">
+                <option value="single">single text</option>
+                <option value="multiple">multiple texts</option>
+            </select>
+        </div>
+        
+    </div>
+  <div class="classify-button-div">       
+    <button type="submit" value="submit" name="nm" class='fill'>Classify</button>
+  </div>
+</form>
+<div class="result-labels">
+  <h4 for="" class="sentiment-label">{{sentiment}}</h4>
+  <h4 for="" class="emotion-label">{{dominant_emotion}}</h4>
+</div>
+<div class="emotion-div">
+  <ul class="emotion-table">
+      <li>love:<b>{{emotion['love']}}%</b><div id="love_progress" class="progress-bar"></div></li>
+      <li>admiration:<b>{{emotion['admiration']}}%</b><div id="admiration_progress" class="progress-bar"></div></li>
+      <li>joy:<b>{{emotion['joy']}}%</b><div id="joy_progress" class="progress-bar"></div></li>
+      <li>approval:<b>{{emotion['approval']}}%</b><div id="approval_progress" class="progress-bar" ></div></li>
+      <li>caring:<b>{{emotion['caring']}}%</b><div id="caring_progress" class="progress-bar" ></div></li>
+      <li>excitement:<b>{{emotion['excitement']}}%</b><div id="excitement_progress" class="progress-bar" ></div></li>
+      <li>amusement:<b>{{emotion['amusement']}}%</b><div id="amusement_progress" class="progress-bar" ></div></li>
+      <li>gratitude:<b>{{emotion['gratitude']}}%</b><div id="gratitude_progress" class="progress-bar" ></div></li>
+      <li>desire:<b>{{emotion['desire']}}%</b><div id="desire_progress" class="progress-bar" ></div></li>
+      <li>anger:<b>{{emotion['anger']}}%</b><div id="anger_progress" class="progress-bar" ></div></li>
+      <li>optimism:<b>{{emotion['optimism']}}%</b><div id="optimism_progress" class="progress-bar" ></div></li>
+      <li>disapproval:<b>{{emotion['disapproval']}}%</b><div id="disapproval_progress" class="progress-bar" ></div></li>
+      <li>grief:<b>{{emotion['grief']}}%</b><div id="grief_progress" class="progress-bar" ></div></li>
+      <li>annoyance:<b>{{emotion['annoyance']}}%</b><div id="annoyance_progress" class="progress-bar" ></div></li>
+      <li>pride:<b>{{emotion['pride']}}%</b><div id="pride_progress" class="progress-bar" ></div></li>
+      <li>curiosity:<b>{{emotion['curiosity']}}%</b><div id="curiosity_progress" class="progress-bar" ></div></li>
+      <li>neutral:<b>{{emotion['neutral']}}%</b><div id="neutral_progress" class="progress-bar" ></div></li>
+      <li>disgust:<b>{{emotion['disgust']}}%</b><div id="disgust_progress" class="progress-bar" ></div></li>
+      <li>disappointment:<b>{{emotion['disappointment']}}%</b><div id="disappointment_progress" class="progress-bar" ></div></li>
+      <li>realization:<b>{{emotion['realization']}}%</b><div id="realization_progress" class="progress-bar" ></div></li>
+      <li>fear:<b>{{emotion['fear']}}%</b><div id="fear_progress" class="progress-bar" ></div></li>
+      <li>relief:<b>{{emotion['relief']}}%</b><div id="relief_progress" class="progress-bar" ></div></li>
+      <li>confusion:<b>{{emotion['confusion']}}%</b><div id="confusion_progress" class="progress-bar" ></div></li>
+      <li>remorse:<b>{{emotion['remorse']}}%</b><div id="remorse_progress" class="progress-bar" ></div></li>
+      <li>embarrassment:<b>{{emotion['embarrassment']}}%</b><div id="embarrassment_progress" class="progress-bar" ></div></li>
+      <li>surprise:<b>{{emotion['surprise']}}%</b><div id="surprise_progress" class="progress-bar" ></div></li>
+      <li>sadness:<b>{{emotion['sadness']}}%</b><div id="sadness_progress" class="progress-bar" ></div></li>
+      <li>nervousness:<b>{{emotion['nervousness']}}%</b><div id="nervousness_progress" class="progress-bar" ></div></li>
+  </ul>
+</div>
+{% endblock %}
