@@ -8,9 +8,11 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.errors import HttpError
 from jinja2 import Environment, PackageLoader
 from operator import itemgetter
+from dotenv import load_dotenv
 import json
 import os
 
+load_dotenv()
 app = Flask(__name__)
 env = Environment(loader=PackageLoader(__name__, 'templates'))
 env.filters['json'] = json.dumps
@@ -19,7 +21,7 @@ model = TFRobertaForSequenceClassification.from_pretrained("arpanghoshal/EmoRoBE
 emotion_task_top_result = pipeline('sentiment-analysis', model='arpanghoshal/EmoRoBERTa')
 emotion_task_all_results = pipeline('sentiment-analysis', model='arpanghoshal/EmoRoBERTa', top_k=None)
 sentiment_task = pipeline("sentiment-analysis", model="cardiffnlp/twitter-xlm-roberta-base-sentiment", tokenizer="cardiffnlp/twitter-xlm-roberta-base-sentiment")
-youtube = build('youtube', 'v3', developerKey="AIzaSyCHTk2Huxfpi35y1ABd6i_sO_ykIdtmCOA")
+youtube = build('youtube', 'v3', developerKey=os.environ.get("YOUTUBE_API_KEY"))
 file_uploads = "C:/Users/irecg/PythonProjects/EmotionDetectApp/static/files"
 
 @app.route('/home',methods=["POST","GET"])
