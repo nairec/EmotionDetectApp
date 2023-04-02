@@ -22,7 +22,7 @@ emotion_task_top_result = pipeline('sentiment-analysis', model='arpanghoshal/Emo
 emotion_task_all_results = pipeline('sentiment-analysis', model='arpanghoshal/EmoRoBERTa', top_k=None)
 sentiment_task = pipeline("sentiment-analysis", model="cardiffnlp/twitter-xlm-roberta-base-sentiment", tokenizer="cardiffnlp/twitter-xlm-roberta-base-sentiment")
 youtube = build('youtube', 'v3', developerKey=os.environ.get("YOUTUBE_API_KEY"))
-file_uploads = "C:/Users/irecg/PythonProjects/EmotionDetectApp/static/files"
+file_uploads = os.path.abspath("static/files")
 
 @app.route('/home',methods=["POST","GET"])
 def home():
