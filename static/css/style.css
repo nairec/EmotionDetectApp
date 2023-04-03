@@ -1,7 +1,30 @@
+#a-Home:after,#a-Features:after,#a-Twitter:after,#a-Youtube:after,#a-Text:after,#a-File:after{
+    content: "";
+    display: block;
+    border-bottom: 5px whitesmoke solid;
+    width: 0px;
+    transition: 0.3s;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+#a-Home,#a-Features,#a-Twitter,#a-Youtube,#a-Text,#a-File{
+    margin-top: 15px;
+}
+
 #a-Home:hover,#a-Features:hover,#a-Twitter:hover,#a-Youtube:hover,#a-Text:hover,#a-File:hover{
     color: whitesmoke;
-    text-decoration: overline;
     transition: 0.5s;
+}
+
+#a-Home:hover:after,#a-Features:hover:after,#a-Twitter:hover:after,#a-Youtube:hover:after,#a-Text:hover:after,#a-File:hover:after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 100%; /* Change this to whatever width you want. */
+    border-bottom: 3px whitesmoke solid;
+    transition: 0.3s;
+    margin: 0px auto;
+    margin-top: 10px;
 }
 
 #navbar{
@@ -10,7 +33,7 @@
     width: 100%; /* Full width */
     top: 0;
     z-index: 100;
-    border-bottom: 5px #151e3a;
+    border-bottom: 3px #151e3a;
     border-bottom-style: solid;
     font-size: 17px;
     height: 50px;
@@ -195,7 +218,7 @@ button {
     text-align: center;
     border: 1px solid #91FA9F;
     border-radius: 10px;
-    box-shadow: 8px 8px 5px 1px #153a3a;
+    box-shadow: 8px 8px 5px 1px #1e6654;
     color: white;
     font-size: 15px;
 }
