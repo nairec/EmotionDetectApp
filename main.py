@@ -7,7 +7,6 @@ from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from googleapiclient.errors import HttpError
 from jinja2 import Environment, PackageLoader
-from operator import itemgetter
 from dotenv import load_dotenv
 import json
 import os

@@ -65,7 +65,7 @@
 .emotion-table{
     margin-top: 20px;
     margin-left: 5%;
-    width: fit-content;
+    width: 650px;
     list-style-type: none;
     color: whitesmoke;
     border: 2px #91FA9F solid;
@@ -77,9 +77,20 @@ li{
     line-height: 40px;
 }
 .progress-bar{
+    position: relative;
     height: 5px;
     border-radius: 20px;
+    background:linear-gradient(90deg,#155b63, #26a4b4);
+    z-index: 1;
 }
+.parent_progress_div{
+    position: absolute;
+    z-index: -1;
+    width: 600px;
+    border-radius: 20px;
+    background-color: #0b2e33;
+}
+
 b{
     margin-left: 20px;
 }

@@ -98,14 +98,15 @@ textarea:hover::placeholder {
     outline: none;
     background-color: #0d1422;
     color: whitesmoke;
-    border: 2px #555594 solid;
+    border-width: 3px;
+    border-image: linear-gradient(45deg, #001c53 1%, #555594) 1;
     transition: 0.3s;
 }
 
 .mode:hover{
     background-color: #6b6daf;
     box-shadow: 5px 8px 8px 1px #153a3a;
-    border: 2px #91FA9F solid;
+    border: 3px #91FA9F solid;
     transition: 0.3s;
 }
 
@@ -128,64 +129,23 @@ button {
     font-size: 15px;
     letter-spacing: 2px;
     color: whitesmoke;
-    border: 2px #555594 solid;
-    border-radius: 4px;
+    border: 3px solid #555594;
     text-transform: uppercase;
     outline: 0;
     overflow:hidden;
-    background: #0d1422;
     z-index: 1;
     cursor: pointer;
     border-radius: 10px;
-    transition:         0.08s ease-in;
-    -o-transition:      0.08s ease-in;
-    -ms-transition:     0.08s ease-in;
-    -moz-transition:    0.08s ease-in;
-    -webkit-transition: 0.08s ease-in;
+    background:linear-gradient(45deg, #0d1422, rgb(0, 42, 155));
+    transition:0.2s ease-in;
 }
   
 .fill:hover {
     color: #91FA9F;
-    border-color: #91FA9F;
-    box-shadow: 4px 4px 10px 2px #153a3a;
-}
-  
-.fill:before {
-    content: "";
-    position: absolute;
-    background: #6b6daf;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 100%;
-    z-index: -1;
-    -webkit-transition: top 0.1s ease-in;
-}
-  
-.fill:hover:before {
-    top: 0;
-}
-  
-.fade:before{
-    content:"→";
-    position:absolute;
-    color:#383736;
-    left: 88%;
-    opacity: 0;
-    -webkit-transition: all 0.2s ease-in;
-}
-  
-.fade:hover:before{
-    left:91%;
-    opacity:1;
-}
-  
-.fade:hover {
-    border: 0px #fff solid;
-    -webkit-transform: scale(1.04,1.04);
-    -webkit-transition: border 0.3s ease-out;
-    -webkit-transition: transform 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
-    transition: transform 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550); ;
+    border: 3px solid #91FA9F;
+    box-shadow: 4px 4px 10px 2px #093864;
+    background:linear-gradient(45deg, rgb(0, 42, 155), #0d1422);
+    transition: 0.3s;
 }
 
 .result-labels{

@@ -37,13 +37,14 @@
     outline: none;
     background-color: #0d1422;
     color: whitesmoke;
-    border: 2px #555594 solid;
+    border-width: 3px;
+    border-image: linear-gradient(45deg, #001c53 1%, #555594) 1;
     transition: 0.3s;
 }
 .file-mode:hover{
     background-color: #6b6daf;
     box-shadow: 5px 8px 8px 1px #153a3a;
-    border: 2px #91FA9F solid;
+    border-image: linear-gradient(45deg, #001c53 1%, #91FA9F) 1;
     transition: 0.3s;
 }
 .emotion-div{
