@@ -9,7 +9,9 @@
     A web App designed for analysing the sentiments and emotions of different inputs
   <p align="center">
     <a href="https://github.com/nairec/EmotionDetectApp">View Repo</a>
+    .
     <a href="https://github.com/nairec/EmotionDetectApp/issues">Report Bug</a>
+    .
     <a href="https://github.com/nairec/EmotionDetectApp/issues">Request Feature</a>
   </p>
 </div>
