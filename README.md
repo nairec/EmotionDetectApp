@@ -6,9 +6,8 @@
   </a>
 
 <h3 align="center">Emotion Detector App</h3>
-
+    A web App designed for analysing the sentiments and emotions of different inputs
   <p align="center">
-    project_description
     <a href="https://github.com/nairec/EmotionDetectApp">View Repo</a>
     <a href="https://github.com/nairec/EmotionDetectApp/issues">Report Bug</a>
     <a href="https://github.com/nairec/EmotionDetectApp/issues">Request Feature</a>
