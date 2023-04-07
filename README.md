@@ -42,8 +42,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -61,8 +59,6 @@ This software is developed with roBERTa and emoRoBERTa models of huggingface
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ### Built With
 
 <ul>
@@ -70,8 +66,6 @@ This software is developed with roBERTa and emoRoBERTa models of huggingface
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -149,5 +143,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 email - irecgc@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Logo Maker](https://logomakr.com)
+* []()
+* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

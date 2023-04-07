@@ -80,7 +80,7 @@ li{
     position: relative;
     height: 5px;
     border-radius: 20px;
-    background:linear-gradient(90deg,#155b63, #26a4b4);
+    background:linear-gradient(90deg,#26a4b4, #155b63);
     z-index: 1;
 }
 .parent_progress_div{
@@ -93,4 +93,18 @@ li{
 
 b{
     margin-left: 20px;
+}
+.emotion-div{
+    margin-left: 170px;
+}
+.bubble_graphs_div{
+    display: flex;
+}
+.bubble_graph{
+    width: 350px;
+    height: 350px;
+    border: 4px #91FA9F solid;
+    border-radius: 10px;
+    box-shadow: 5px 8px 8px 1px #153a3a;
+    margin-left: 1%;
 }

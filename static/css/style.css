@@ -9,7 +9,15 @@
 }
 
 #a-Home,#a-Features,#a-Twitter,#a-Youtube,#a-Text,#a-File{
-    margin-top: 15px;
+    display: block;
+    color:whitesmoke;
+    margin-top: 15%;
+    border-right: 2px whitesmoke solid;
+    height:40px;
+}
+
+#a-File{
+    border-right: none;
 }
 
 #a-Home:hover,#a-Features:hover,#a-Twitter:hover,#a-Youtube:hover,#a-Text:hover,#a-File:hover{
@@ -20,32 +28,35 @@
 #a-Home:hover:after,#a-Features:hover:after,#a-Twitter:hover:after,#a-Youtube:hover:after,#a-Text:hover:after,#a-File:hover:after{
     content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
-    width: 100%; /* Change this to whatever width you want. */
+    width: 80%; /* Change this to whatever width you want. */
     border-bottom: 3px whitesmoke solid;
     transition: 0.3s;
-    margin: 0px auto;
-    margin-top: 10px;
 }
 
 #navbar{
-    background-color:#3d6081;
-    position: fixed;
+    background-color:#0d1422;
+    position: absolute;
     width: 100%; /* Full width */
     top: 0;
     z-index: 100;
-    border-bottom: 3px #151e3a;
-    border-bottom-style: solid;
     font-size: 17px;
-    height: 50px;
+    height: 100px;
+    padding-left: 2%;
+}
+
+.navbar-nav b{
+    color: whitesmoke;
+    margin-left: 10px;
 }
 
 .navbar-brand img{
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
 }
 
 h1{
-    margin-top: 100px;
+    margin-top: 200px;
     text-align: center;
     color: whitesmoke;
 }
@@ -204,4 +215,9 @@ button {
     height:fit-content;
     color: whitesmoke;
     font-size: 15px;
+}
+
+.emotion_and_topics_div{
+    display: flex;
+    justify-items: center;
 }

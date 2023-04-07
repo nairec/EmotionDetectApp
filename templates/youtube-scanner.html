@@ -36,6 +36,27 @@
     #sadness_progress { width: {{600*total_emotions['sadness']/100}}px}
     #nervousness_progress { width: {{600*total_emotions['nervousness']/100}}px}
   </style>
+  <style>
+    #arts_and_culture_progress { width: {{600*topics['arts_&_culture']/100}}px }
+    #fashion_and_style_progress { width: {{ 600*topics['fashion_&_style']/100 }}px }
+    #learning_and_educational_progress { width: {{ 600*topics['learning_&_educational']/100 }}px }
+    #science_and_technology_progress { width: {{600*topics['science_&_technology']/100}}px}
+    #business_and_entrepreneur_progress { width: {{600*topics['business_&_entrepreneurs']/100}}px}
+    #film_tv_and_video_progress { width: {{600*topics['film_tv_&_video']/100}}px}
+    #music_progress { width: {{600*topics['music']/100}}px}
+    #sports_progress { width: {{600*topics['sports']/100}}px}
+    #celebrity_and_pop_culture_progress { width: {{600*topics['celebrity_&_pop_culture']/100}}px}
+    #fitness_and_health_progress { width: {{600*topics['fitness_&_health']/100}}px}
+    #news_and_social_concern_progress { width: {{600*topics['news_&_social_concern']/100}}px}
+    #travel_and_adventure_progress { width: {{600*topics['travel_&_adventure']/100}}px}
+    #diaries_and_daily_life_progress { width: {{600*topics['diaries_&_daily_life']/100}}px}
+    #food_and_dining_progress { width: {{600*topics['food_&_dining']/100}}px}
+    #other_hobbies_progress { width: {{600*topics['other_hobbies']/100}}px}
+    #youth_and_student_life_progress { width: {{600*topics['youth_&_student_life']/100}}px}
+    #family_progress { width: {{600*topics['family']/100}}px}
+    #gaming_progress { width: {{600*topics['gaming']/100}}px}
+    #relationships_progress { width: {{600*topics['relationships']/100}}px}
+  </style>
   <title>My Web</title>
 </meta>
 {% endblock %}
@@ -71,37 +92,67 @@
     <h4 for="" class="sentiment-label">{{neutral_result}}</h4>
     <h4 for="" class="sentiment-label">{{negative_result}}</h4>
   </div>
-  <div class="emotion-div">
-    <ul class="emotion-table">
-        <li>love:<b>{{total_emotions['love']}}%</b><div class="parent_progress_div"><div id="love_progress" class="progress-bar"></div></div></li>
-        <li>admiration:<b>{{total_emotions['admiration']}}%</b><div class="parent_progress_div"><div id="admiration_progress" class="progress-bar"></div></div></li>
-        <li>joy:<b>{{total_emotions['joy']}}%</b><div class="parent_progress_div"><div id="joy_progress" class="progress-bar"></div></div></li>
-        <li>approval:<b>{{total_emotions['approval']}}%</b><div class="parent_progress_div"><div id="approval_progress" class="progress-bar" ></div></div></li>
-        <li>caring:<b>{{total_emotions['caring']}}%</b><div class="parent_progress_div"><div id="caring_progress" class="progress-bar" ></div></div></li>
-        <li>excitement:<b>{{total_emotions['excitement']}}%</b><div class="parent_progress_div"><div id="excitement_progress" class="progress-bar" ></div></div></li>
-        <li>amusement:<b>{{total_emotions['amusement']}}%</b><div class="parent_progress_div"><div id="amusement_progress" class="progress-bar" ></div></div></li>
-        <li>gratitude:<b>{{total_emotions['gratitude']}}%</b><div class="parent_progress_div"><div id="gratitude_progress" class="progress-bar" ></div></div></li>
-        <li>desire:<b>{{total_emotions['desire']}}%</b><div class="parent_progress_div"><div id="desire_progress" class="progress-bar" ></div></div></li>
-        <li>anger:<b>{{total_emotions['anger']}}%</b><div class="parent_progress_div"><div id="anger_progress" class="progress-bar" ></div></div></li>
-        <li>optimism:<b>{{total_emotions['optimism']}}%</b><div class="parent_progress_div"><div id="optimism_progress" class="progress-bar" ></div></div></li>
-        <li>disapproval:<b>{{total_emotions['disapproval']}}%</b><div class="parent_progress_div"><div id="disapproval_progress" class="progress-bar" ></div></div></li>
-        <li>grief:<b>{{total_emotions['grief']}}%</b><div class="parent_progress_div"><div id="grief_progress" class="progress-bar" ></div></div></li>
-        <li>annoyance:<b>{{total_emotions['annoyance']}}%</b><div class="parent_progress_div"><div id="annoyance_progress" class="progress-bar" ></div></div></li>
-        <li>pride:<b>{{total_emotions['pride']}}%</b><div class="parent_progress_div"><div id="pride_progress" class="progress-bar" ></div></div></li>
-        <li>curiosity:<b>{{total_emotions['curiosity']}}%</b><div class="parent_progress_div"><div id="curiosity_progress" class="progress-bar" ></div></div></li>
-        <li>neutral:<b>{{total_emotions['neutral']}}%</b><div class="parent_progress_div"><div id="neutral_progress" class="progress-bar" ></div></div></li>
-        <li>disgust:<b>{{total_emotions['disgust']}}%</b><div class="parent_progress_div"><div id="disgust_progress" class="progress-bar" ></div></div></li>
-        <li>disappointment:<b>{{total_emotions['disappointment']}}%</b><div class="parent_progress_div"><div id="disappointment_progress" class="progress-bar" ></div></div></li>
-        <li>realization:<b>{{total_emotions['realization']}}%</b><div class="parent_progress_div"><div id="realization_progress" class="progress-bar" ></div></div></li>
-        <li>fear:<b>{{total_emotions['fear']}}%</b><div class="parent_progress_div"><div id="fear_progress" class="progress-bar" ></div></div></li>
-        <li>relief:<b>{{total_emotions['relief']}}%</b><div class="parent_progress_div"><div id="relief_progress" class="progress-bar" ></div></div></li>
-        <li>confusion:<b>{{total_emotions['confusion']}}%</b><div class="parent_progress_div"><div id="confusion_progress" class="progress-bar" ></div></div></li>
-        <li>remorse:<b>{{total_emotions['remorse']}}%</b><div class="parent_progress_div"><div id="remorse_progress" class="progress-bar" ></div></div></li>
-        <li>embarrassment:<b>{{total_emotions['embarrassment']}}%</b><div class="parent_progress_div"><div id="embarrassment_progress" class="progress-bar" ></div></div></li>
-        <li>surprise:<b>{{total_emotions['surprise']}}%</b><div class="parent_progress_div"><div id="surprise_progress" class="progress-bar" ></div></div></li>
-        <li>sadness:<b>{{total_emotions['sadness']}}%</b><div class="parent_progress_div"><div id="sadness_progress" class="progress-bar" ></div></div></li>
-        <li>nervousness:<b>{{total_emotions['nervousness']}}%</b><div class="parent_progress_div"><div id="nervousness_progress" class="progress-bar" ></div></div></li>
-    </ul>
+  <div class="emotion_and_topics_div">
+    <div class="emotion-div">
+      <ul class="emotion-table">
+          <li>love:<b>{{total_emotions['love']}}%</b><div class="parent_progress_div"><div id="love_progress" class="progress-bar"></div></div></li>
+          <li>admiration:<b>{{total_emotions['admiration']}}%</b><div class="parent_progress_div"><div id="admiration_progress" class="progress-bar"></div></div></li>
+          <li>joy:<b>{{total_emotions['joy']}}%</b><div class="parent_progress_div"><div id="joy_progress" class="progress-bar"></div></div></li>
+          <li>approval:<b>{{total_emotions['approval']}}%</b><div class="parent_progress_div"><div id="approval_progress" class="progress-bar" ></div></div></li>
+          <li>caring:<b>{{total_emotions['caring']}}%</b><div class="parent_progress_div"><div id="caring_progress" class="progress-bar" ></div></div></li>
+          <li>excitement:<b>{{total_emotions['excitement']}}%</b><div class="parent_progress_div"><div id="excitement_progress" class="progress-bar" ></div></div></li>
+          <li>amusement:<b>{{total_emotions['amusement']}}%</b><div class="parent_progress_div"><div id="amusement_progress" class="progress-bar" ></div></div></li>
+          <li>gratitude:<b>{{total_emotions['gratitude']}}%</b><div class="parent_progress_div"><div id="gratitude_progress" class="progress-bar" ></div></div></li>
+          <li>desire:<b>{{total_emotions['desire']}}%</b><div class="parent_progress_div"><div id="desire_progress" class="progress-bar" ></div></div></li>
+          <li>anger:<b>{{total_emotions['anger']}}%</b><div class="parent_progress_div"><div id="anger_progress" class="progress-bar" ></div></div></li>
+          <li>optimism:<b>{{total_emotions['optimism']}}%</b><div class="parent_progress_div"><div id="optimism_progress" class="progress-bar" ></div></div></li>
+          <li>disapproval:<b>{{total_emotions['disapproval']}}%</b><div class="parent_progress_div"><div id="disapproval_progress" class="progress-bar" ></div></div></li>
+          <li>grief:<b>{{total_emotions['grief']}}%</b><div class="parent_progress_div"><div id="grief_progress" class="progress-bar" ></div></div></li>
+          <li>annoyance:<b>{{total_emotions['annoyance']}}%</b><div class="parent_progress_div"><div id="annoyance_progress" class="progress-bar" ></div></div></li>
+          <li>pride:<b>{{total_emotions['pride']}}%</b><div class="parent_progress_div"><div id="pride_progress" class="progress-bar" ></div></div></li>
+          <li>curiosity:<b>{{total_emotions['curiosity']}}%</b><div class="parent_progress_div"><div id="curiosity_progress" class="progress-bar" ></div></div></li>
+          <li>neutral:<b>{{total_emotions['neutral']}}%</b><div class="parent_progress_div"><div id="neutral_progress" class="progress-bar" ></div></div></li>
+          <li>disgust:<b>{{total_emotions['disgust']}}%</b><div class="parent_progress_div"><div id="disgust_progress" class="progress-bar" ></div></div></li>
+          <li>disappointment:<b>{{total_emotions['disappointment']}}%</b><div class="parent_progress_div"><div id="disappointment_progress" class="progress-bar" ></div></div></li>
+          <li>realization:<b>{{total_emotions['realization']}}%</b><div class="parent_progress_div"><div id="realization_progress" class="progress-bar" ></div></div></li>
+          <li>fear:<b>{{total_emotions['fear']}}%</b><div class="parent_progress_div"><div id="fear_progress" class="progress-bar" ></div></div></li>
+          <li>relief:<b>{{total_emotions['relief']}}%</b><div class="parent_progress_div"><div id="relief_progress" class="progress-bar" ></div></div></li>
+          <li>confusion:<b>{{total_emotions['confusion']}}%</b><div class="parent_progress_div"><div id="confusion_progress" class="progress-bar" ></div></div></li>
+          <li>remorse:<b>{{total_emotions['remorse']}}%</b><div class="parent_progress_div"><div id="remorse_progress" class="progress-bar" ></div></div></li>
+          <li>embarrassment:<b>{{total_emotions['embarrassment']}}%</b><div class="parent_progress_div"><div id="embarrassment_progress" class="progress-bar" ></div></div></li>
+          <li>surprise:<b>{{total_emotions['surprise']}}%</b><div class="parent_progress_div"><div id="surprise_progress" class="progress-bar" ></div></div></li>
+          <li>sadness:<b>{{total_emotions['sadness']}}%</b><div class="parent_progress_div"><div id="sadness_progress" class="progress-bar" ></div></div></li>
+          <li>nervousness:<b>{{total_emotions['nervousness']}}%</b><div class="parent_progress_div"><div id="nervousness_progress" class="progress-bar" ></div></div></li>
+      </ul>
+    </div>
+    <div class="emotion-div">
+      <ul class="emotion-table">
+          <li>arts and culture:<b>{{topics['arts_&_culture']}}%</b><div class="parent_progress_div"><div id="arts_and_culture_progress" class="progress-bar"></div></div></li>
+          <li>fashion and style:<b>{{topics['fashion_&_style']}}%</b><div class="parent_progress_div"><div id="fashion_and_style_progress" class="progress-bar"></div></div></li>
+          <li>learning and educational:<b>{{topics['learning_&_educational']}}%</b><div class="parent_progress_div"><div id="learning_and_educational_progress" class="progress-bar"></div></div></li>
+          <li>science and technology:<b>{{topics['science_&_technology']}}%</b><div class="parent_progress_div"><div id="science_and_technology_progress" class="progress-bar" ></div></div></li>
+          <li>business and entrepreneur:<b>{{topics['business_&_entrepreneur']}}%</b><div class="parent_progress_div"><div id="business_and_entrepreneur_progress" class="progress-bar" ></div></div></li>
+          <li>films, tv and video:<b>{{topics['film_tv_&_video']}}%</b><div class="parent_progress_div"><div id="film_tv_and_video_progress" class="progress-bar" ></div></div></li>
+          <li>music:<b>{{topics['music']}}%</b><div class="parent_progress_div"><div id="music_progress" class="progress-bar" ></div></div></li>
+          <li>sports:<b>{{topics['sports']}}%</b><div class="parent_progress_div"><div id="sports_progress" class="progress-bar" ></div></div></li>
+          <li>celebrity and pop culture:<b>{{topics['celebrity_&_pop_culture']}}%</b><div class="parent_progress_div"><div id="celebrity_and_pop_culture_progress" class="progress-bar" ></div></div></li>
+          <li>fitness and health:<b>{{topics['fitness_&_health']}}%</b><div class="parent_progress_div"><div id="fitness_and_health_progress" class="progress-bar" ></div></div></li>
+          <li>news and social concern:<b>{{topics['news_&_social_concern']}}%</b><div class="parent_progress_div"><div id="news_and_social_concern_progress" class="progress-bar" ></div></div></li>
+          <li>travel and adventure:<b>{{topics['travel_&_adventure']}}%</b><div class="parent_progress_div"><div id="travel_and_adventure_progress" class="progress-bar" ></div></div></li>
+          <li>diaries and daily life:<b>{{topics['diaries_&_daily_life']}}%</b><div class="parent_progress_div"><div id="diaries_and_daily_life_progress" class="progress-bar" ></div></div></li>
+          <li>food and dining:<b>{{topics['food_&_dining']}}%</b><div class="parent_progress_div"><div id="food_and_dining_progress" class="progress-bar" ></div></div></li>
+          <li>other hobbies:<b>{{topics['other_hobbies']}}%</b><div class="parent_progress_div"><div id="other_hobbies_progress" class="progress-bar" ></div></div></li>
+          <li>youth and student life:<b>{{topics['youth_&_student_life']}}%</b><div class="parent_progress_div"><div id="youth_and_student_life_progress" class="progress-bar" ></div></div></li>
+          <li>family:<b>{{topics["family"]}}%</b><div class="parent_progress_div"><div id="family_progress" class="progress-bar" ></div></div></li>
+          <li>gaming:<b>{{topics['gaming']}}%</b><div class="parent_progress_div"><div id="gaming_progress" class="progress-bar" ></div></div></li>
+          <li>relationships:<b>{{topics['relationships']}}%</b><div class="parent_progress_div"><div id="relationships_progress" class="progress-bar" ></div></div></li>
+      </ul>
+      {% if bubble_graph_topics and bubble_graph_emotions %}
+        <div class="bubble_graphs_div">
+          <img src="data:image/jpeg;base64,{{ bubble_graph_topics }}" class="bubble_graph">
+          <img src="data:image/jpeg;base64,{{ bubble_graph_emotions }}" class="bubble_graph">
+        </div>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endblock %}
