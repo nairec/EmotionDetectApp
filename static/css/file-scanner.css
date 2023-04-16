@@ -51,14 +51,9 @@
     margin-left: 170px;
 }
 
-.bubble_graphs_div{
-    display: flex;
-}
 .bubble_graph{
-    width: 350px;
-    height: 350px;
-    border: 4px #91FA9F solid;
-    border-radius: 10px;
-    box-shadow: 5px 8px 8px 1px #153a3a;
-    margin-left: 1%;
+    width: 300px;
+}
+#doughnut_graph{
+    width: 800px;
 }

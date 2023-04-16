@@ -95,7 +95,8 @@
   <h4 for="" class="emotion-label">{{dominant_emotion}}</h4>
 </div>
 <div class="emotion_and_topics_div">
-  <div class="emotion-div">
+  <div class="emotion-div" tabindex="0">
+    <p>Click to open emotions list</p>
     <ul class="emotion-table">
         <li>love:<b>{{emotion['love']}}%</b><div class="parent_progress_div"><div id="love_progress" class="progress-bar"></div></div></li>
         <li>admiration:<b>{{emotion['admiration']}}%</b><div class="parent_progress_div"><div id="admiration_progress" class="progress-bar"></div></div></li>
@@ -127,7 +128,8 @@
         <li>nervousness:<b>{{emotion['nervousness']}}%</b><div class="parent_progress_div"><div id="nervousness_progress" class="progress-bar" ></div></div></li>
     </ul>
   </div>
-  <div class="emotion-div">
+  <div class="emotion-div" tabindex="0" id="emotion-div-topics">
+    <p>Click to open topics list</p>
     <ul class="emotion-table">
         <li>arts and culture:<b>{{topics['arts_&_culture']}}%</b><div class="parent_progress_div"><div id="arts_and_culture_progress" class="progress-bar"></div></div></li>
         <li>fashion and style:<b>{{topics['fashion_&_style']}}%</b><div class="parent_progress_div"><div id="fashion_and_style_progress" class="progress-bar"></div></div></li>
@@ -149,12 +151,19 @@
         <li>gaming:<b>{{topics['gaming']}}%</b><div class="parent_progress_div"><div id="gaming_progress" class="progress-bar" ></div></div></li>
         <li>relationships:<b>{{topics['relationships']}}%</b><div class="parent_progress_div"><div id="relationships_progress" class="progress-bar" ></div></div></li>
     </ul>
-    {% if bubble_graph_topics and bubble_graph_emotions %}
-      <div class="bubble_graphs_div">
-        <img src="data:image/jpeg;base64,{{ bubble_graph_topics }}" class="bubble_graph">
-        <img src="data:image/jpeg;base64,{{ bubble_graph_emotions }}" class="bubble_graph">
-      </div>
-    {% endif %}
+  </div>
+</div>
+{% if bubble_graph_topics and bubble_graph_emotions %}
+<div class="bubble_graphs_div">
+  {{ bubble_graph_topics|safe }}
+  {{ bubble_graph_emotions|safe }}
+</div>
+<div class="bubble_graphs_div">
+  {{ doughnut_graph_topics|safe }}
+</div>
+{% endif %}
+  <div>
+
   </div>
 </div>
 {% endblock %}

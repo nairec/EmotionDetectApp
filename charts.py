@@ -5,6 +5,7 @@ from PIL import Image
 import io
 import base64
 import os
+import mpld3
 
 def make_bubble_graph(data):
 
@@ -14,10 +15,7 @@ def make_bubble_graph(data):
     sorted_keys = sorted(data, key=data.get)[-5:]
 
     for w in sorted_keys:
-        sorted_data[w] = data[w]
-    
-    for value in sorted_data.values():
-        value = value if value > 0 else 0.1
+        sorted_data[w] = float(data[w]) if float(data[w]) > 0 else 0.1
 
     circles = circlify.circlify(
     sorted_data.values(), 
@@ -26,8 +24,9 @@ def make_bubble_graph(data):
     )  
 
     fig, ax = plt.subplots(figsize=(5,5))
-    ax.axis('off')
     ax.set_title('Top 5 topics distribution')
+    ax.set_axis_off()
+    ax.set_facecolor("#0d1422")
     labels = sorted_data.keys()
     colors = ['#FF5733', '#C70039', '#900C3F', '#581845', '#2C3E50', '#7D6608', '#7E5109', '#784212', '#512E5F', '#283747', '#154360', '#0E6251', '#145A32', '#1B4F72', '#7E5109', '#784212', '#2E4053', '#2C2C54', '#8E44AD']
 
@@ -51,12 +50,20 @@ def make_bubble_graph(data):
             va='center',
             ha='center'
         )
-    print(data.values())
-    print(data.keys())
+    encoded_img_data = mpld3.fig_to_html(fig)
+    return encoded_img_data
 
-    plt.savefig("static/images/bubble_graph_200.jpg", facecolor='#0d1422',dpi=200)
-    img = Image.open("static/images/bubble_graph_200.jpg")
-    data = io.BytesIO()
-    img.save(data,"JPEG")
-    encoded_img_data = base64.b64encode(data.getvalue())
+def make_doughnut_chart(data):
+    values = data.values()
+    labels = data.keys()
+
+    fig, ax = plt.subplots(figsize=(6,6))
+    ax.pie(values,
+        labels=labels,
+        autopct='%1.1f%%',
+        startangle=90)
+    ax.axis('off')
+    ax.set_facecolor("#0d1422")
+
+    encoded_img_data = mpld3.fig_to_html(fig)
     return encoded_img_data

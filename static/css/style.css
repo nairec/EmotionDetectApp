@@ -62,7 +62,14 @@ h1{
 }
 
 body{
-    background-color: #0d1422
+    background-color: #0d1422;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    height: 105%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 p{
@@ -219,5 +226,6 @@ button {
 
 .emotion_and_topics_div{
     display: flex;
+    width: 100%;
     justify-items: center;
 }

@@ -10,9 +10,10 @@ from jinja2 import Environment, PackageLoader
 from dotenv import load_dotenv
 import json
 import os
+import mpld3
 
 from topic_detect import get_topics
-from charts import make_bubble_graph
+from charts import make_bubble_graph, make_doughnut_chart
 
 load_dotenv()
 app = Flask(__name__)
@@ -70,6 +71,7 @@ def youtube_scanner():
         video_link = video_link[-11:]
         positive_result,neutral_result,negative_result,total_emotions,topics = analyse_youtube(video_link,int(max_results))
         bubble_graph_topics = make_bubble_graph(topics)
+        print(f"emotions: {total_emotions}")
         bubble_graph_emotions = make_bubble_graph(total_emotions)
         return env.get_template('youtube-scanner.html').render(positive_result=positive_result,neutral_result=neutral_result,negative_result=negative_result,total_emotions=total_emotions,topics=topics,bubble_graph_topics=bubble_graph_topics.decode('utf-8'),bubble_graph_emotions=bubble_graph_emotions.decode('utf-8'))
     else:
@@ -87,9 +89,10 @@ def file_scanner():
         sentiment,emotion,topics = file_scan(mode,file)
         bubble_graphic_topics = make_bubble_graph(topics)
         bubble_graphic_emotions = make_bubble_graph(emotion)
+        doughnut_graphic_topics = make_doughnut_chart(topics)
         dominant_emotion_label = max(emotion, key=emotion.get)
         dominant_emotion = f" dominant emotion: {dominant_emotion_label}, score: {emotion[dominant_emotion_label]}%"
-        return env.get_template('file-scanner.html').render(sentiment=sentiment,emotion=emotion,dominant_emotion=dominant_emotion,topics=topics,bubble_graph_topics=bubble_graphic_topics.decode('utf-8'),bubble_graph_emotions=bubble_graphic_emotions.decode('utf-8'))
+        return env.get_template('file-scanner.html').render(sentiment=sentiment,emotion=emotion,dominant_emotion=dominant_emotion,topics=topics,bubble_graph_topics=bubble_graphic_topics,bubble_graph_emotions=bubble_graphic_emotions,doughnut_graph_topics=doughnut_graphic_topics)
     else:
         sentiment = "File sentiment"
         dominant_emotion = "Dominant file emotion"
